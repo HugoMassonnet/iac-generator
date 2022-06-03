@@ -8,3 +8,12 @@
     controller_oauthtoken: 8foQfAGbuyaY5DaFkocMjs3lloEoJ8
   collections:
     - ansible.controller
+  
+  pre_tasks:
+    - name: Include vars from controller_configs directory
+      include_vars:
+        dir: ./yaml
+        ignore_files: [controller_config.yml.template]
+        extensions: ["yml"]
+  roles:
+    - {role: redhat_cop.controller_configuration.projects, when: controller_projects is defined}
