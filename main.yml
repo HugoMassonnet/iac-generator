@@ -7,6 +7,8 @@
     controller_hostname: https://ec2-35-180-45-139.eu-west-3.compute.amazonaws.com
     controller_oauthtoken: 8foQfAGbuyaY5DaFkocMjs3lloEoJ8
   collections:
+    - ansible.tower
+    - redhat_cop.controller_configuration
     - ansible.controller
   
   pre_tasks:
